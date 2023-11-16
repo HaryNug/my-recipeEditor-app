@@ -16,7 +16,7 @@ function App() {
         const firstCocktail = response.data.drinks[0];
         const ingredients = Object.keys(firstCocktail).filter(key => key.startsWith('strIngredient') && firstCocktail[key] !== null).map(key => firstCocktail[key]);
         const measures = [];
-        for (let i = 1; i <= 3; i++) {
+        for (let i = 1; i <= 15; i++) {
           const measureKey = `strMeasure${i}`;
           if (firstCocktail[measureKey] !== null) {
             measures.push(convertToNumber(firstCocktail[measureKey]));
@@ -48,8 +48,7 @@ function App() {
       } else if (measure.includes('Juice of')) {
         const fraction = measure.split(' ')[2];
         return eval(fraction);
-      }
-      console.log(cocktail.measures)  
+      }  
     }
     return measure;
   };
