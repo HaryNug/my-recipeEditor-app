@@ -69,12 +69,9 @@ function App() {
     setCocktail({...cocktail, measures: updatedMeasures});
   }
   
-  // Fungsi untuk menghitung total measures dari cocktail
 const getTotalMeasure = () => {
   if (cocktail && cocktail.measures) {
-    // Jumlahkan semua nilai dalam array measures
     const total = cocktail.measures.reduce((accumulator, currentValue) => {
-      // Ubah nilai string menjadi angka dan tambahkan ke accumulator
       return accumulator + parseFloat(currentValue);
     }, 0);
 
